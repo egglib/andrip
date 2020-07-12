@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/loadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="關閉動畫" />
+
+
+      <ViewFlipper
+          android:id="@+id/flipper"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:flipInterval="5000"
+          android:autoStart="true"
+          android:outAnimation="@anim/y_out"
+          android:inAnimation="@anim/y_in"/>
+
+
+    <com.egglib.andrip.view.SpreadView
+        android:id="@+id/spreadView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:spread_center_color="@color/colorAccent"
+        app:spread_delay_milliseconds="35"
+        app:spread_distance="5"
+        app:spread_max_radius="15"
+        app:spread_radius="20"
+        app:spread_spread_color="@color/colorAccent" />
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+public void drawArc(RectF oval, float startAngle, float sweepAngle, boolean useCenter, Paint paint)
+
+oval :指定圆弧的外轮廓矩形区域。
+startAngle: 圆弧起始角度，单位为度。圆弧是按顺时针画的，角度0与几何中0度的位置相同，即三点钟位置。但几何学中的逆时针方向角度从0到360，但此处是顺时针方向从0到360。当startAngle为负值时，则从0度开始反方向取相应角度；如果startAngle大于等于360，则会按360取模的结果开始。
+sweepAngle: 圆弧扫过的角度，顺时针方向，单位为度,从右中间开始为零度。角度范围，是一个从startAngle开始横扫的角度，而非结束角度值。因此当sweepAngle大于等于360度时，圆弧被画成了整圆。如果为负值，则从反方向取此绝对值的范围。
+useCenter: 如果为True时，在绘制圆弧时将圆心包括在内，通常用来绘制扇形。
+
+https://inloop.github.io/shadow4android/
+https://www.androiddevtools.cn/
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public void drawCircle (float cx, float cy, float radius, Paint paint)
+
+cx：圆心的x坐标。
+cy：圆心的y坐标。
+radius：圆的半径。
+paint：绘制时所使用的画笔。
+
+    private void drawRingImg(RectF rectF, Canvas canvas) {
+        Bitmap ringBitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.bg_turntable_ring);
+        canvas.drawBitmap(ringBitmap, null, rectF, imgPaint);
+    }
+
+
+初始化
+onMeasure
+onLayout
+onDraw
+
+TextView中添加超链接
+mTextView.setAutoLinkMask(Linkify.ALL);
+
+功能类项目
+https://github.com/DayorNight/BLCS
+
+加密
+https://www.jianshu.com/p/46aaccc71ce8
+
+public static SpannableStringBuilder findSearch(int color, String text, String keyword) {
+        SpannableStringBuilder spannableString = new SpannableStringBuilder(text);
+        Pattern p = Pattern.compile(keyword);
+        Matcher m = p.matcher(spannableString);
+        while (m.find()) {
+            int start = m.start();
+            int end = m.end();
+            spannableString.setSpan(new ForegroundColorSpan(color), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        return spannableString;
+    }
+
+
+
+
+
+
+
+
+
+
